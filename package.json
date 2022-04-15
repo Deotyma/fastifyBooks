@@ -1,0 +1,15 @@
+{
+  "name": "fastifybooks",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "exercice of fastify framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deotyma",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.28.0"
+  }
+}
