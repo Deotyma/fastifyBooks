@@ -1,4 +1,5 @@
-import Fastify from 'fastify'
+import Fastify from 'fastify';
+import MongoDBbooks from '../config/db.js';
 
 
 const fastify = Fastify({
@@ -11,12 +12,14 @@ fastify.get('/', function (request, reply) {
   })
 
 
-fastify.listen(3000, function (err) {
-    if (err) {
-      fastify.log.error(err)
-      process.exit(1)
+const start = async()=>{
+    try{
+        fastify.listen(3000);
+        MongoDBbooks.initialize();
     }
-    else{
-        console.log("server is on port 3000")
+    catch(error){
+        fastify.log.error(err)
+        process.exit(1)
     }
-})
+}
+start();
